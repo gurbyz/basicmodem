@@ -193,11 +193,6 @@ class BasicModem(object):
 
             if cid_field in ['NMBR']:
                 self.cid_number = cid_data
-                # Hypothesis: 'NAME' is not there when ringing
-                # --Start
-                self.set_state(self.STATE_CALLERID)
-                self.incomingcallnotificationfunc(self.state)
-                # --End
                 continue
 
             if cid_field in ['NAME']:
